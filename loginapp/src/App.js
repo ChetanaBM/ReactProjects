@@ -38,7 +38,7 @@
 //       emailValid: false,
 //       passwordValid: false,
 //       formValid: false
-      
+
 //     };
 //   }
 
@@ -59,12 +59,12 @@
 //     var {email, password} = this.state;
 
 //     return (
-     
+
 
 //       <div className="container">
 
-     
- 
+
+
 
 //       <div className="form-group">
 //       <FormErrors formErrors={this.state.formErrors} />
@@ -85,7 +85,7 @@
 //             <span className="help-block"></span>
 //           </div>
 
-         
+
 
 //           <button className="btn btn-lg btn-primary btn-block" type="submit">SUBMIT</button>
 //         </form>
@@ -101,95 +101,180 @@
 
 //3rd try login
 
- import React from 'react';
- import ReactDOM from 'react-dom';
+// import React from 'react';
+// //import ReactDOM from 'react-dom';
+// import { Router,Route } from 'react-router';
+// //import {Link} from "react-router-dom";
 
 
-const Welcome = ({user, onSignOut})=> {
-  // This is a dumb "stateless" component
-  return (
-    <div>
-      Welcome <strong>{user.username}</strong>!
-      <a onClick={onSignOut}>Sign out</a>
-    </div>
-  )
-}
 
-class LoginForm extends React.Component {
+// const Welcome = ({user, onSignOut})=> {
+//  // This is a dumb "stateless" component
+//  return (
+//    <div>
+//      Welcome <strong>{user.username}</strong>!
+//      <a onClick={onSignOut}>Sign out</a>
+//    </div>
+//  )
+// }
 
-    // Using a class based component here because we're accessing DOM refs
-   handleSignIn(e) {
-    e.preventDefault() //prevent the default submission
-    let username = this.refs.username.value
-    let password = this.refs.password.value
-    this.props.onSignIn(username, password)
-  }
- 
-  
-  render() {
-    return (
-      <form onSubmit={this.handleSignIn.bind(this) }>
-        <h3>Sign in</h3>
-        <div><label> Username : </label> <input type="email" ref="username" placeholder="enter you username" required onChange={this.handleChange}/></div>
-        <div><label> Password : </label><input type="password" ref="password" placeholder="enter password" required onChange={this.handleChange}/></div>
-        <input type="submit" value="Login" />
-      </form>
-    )
-  }
+// class LoginForm extends React.Component {
 
-}
+//    // Using a class based component here because we're accessing DOM refs
+//   handleSignIn(e) {
+//    e.preventDefault() //prevent the default submission
+//    let username = this.refs.username.value
+//    let password = this.refs.password.value
+//    this.props.onSignIn(username, password)
+//  }
 
 
+//  render() {
+//    return (
+//      <form>
+//        <h3>Sign in</h3>
+//        <div><label> Username : </label> <input type="email" ref="username" placeholder="enter you username" required onChange={this.handleChange}/></div>
+//        <div><label> Password : </label><input type="password" ref="password" placeholder="enter password" required onChange={this.handleChange}/></div>
+//        <Router>
+//       <Route path="/Account.js" component={Account}/>
+
+
+//       </Router>
+
+
+
+//      </form>
+//    )
+//  }
+
+// }
+
+
+// export default class App extends React.Component {
+
+//  constructor(props) {
+//    super(props)
+//    // the initial application state
+//    this.state = {
+//      user: null
+//    }
+//  }
+
+//  // App "actions" (functions that modify state)
+//  signIn(username, password) {
+//    // This is where you would call Firebase, an API etc...
+//    // calling setState will re-render the entire app (efficiently!)
+//    this.setState({
+//      user: {
+//        username,
+//        password,
+//      }
+//    })
+//  }
+
+//  signOut() {
+//    // clear out user from state
+//    this.setState({user: null})
+//  }
+
+//  render() {
+//    // Here we pass relevant state to our child components
+//    // as props. Note that functions are passed using `bind` to
+//    // make sure we keep our scope to App
+//    return (
+//      <div class="container">
+//        <h1>LOGIN</h1>
+//        { 
+//          (this.state.user) ? 
+//            <Welcome 
+//             user={this.state.user} 
+//             onSignOut={this.signOut.bind(this)} 
+//            />
+//          :
+//            <LoginForm 
+//             onSignIn={this.signIn.bind(this)} 
+//            />
+//        }
+//      </div>
+//    )
+
+//  }
+
+// }
+
+//ROUTER
+
+
+// import { BrowserRouter,Router, Route, Link } from 'react-router'
+// import React from 'react';
+// //import ReactDOM from 'react-dom';
+// import './index.css';
+// //import App from './App.js';
+// import LoginForm from './LoginForm';
+// import Account from './Account.js';
+// i//mport { BrowserRouter } from 'react-router-dom'
+
+// // export default class App extends React.Component{
+// //     render(){
+// //         return(
+// // <Router>
+// //   <div>
+// //     <Route exact path="./LoginForm" component={LoginForm}/>
+// //     <Route path="./Account" component={Account}/>
+// //   </div>
+// // </Router>
+// //         );
+// //     }
+// // }
+
+
+
+
+// export default class App extends React.Component{
+
+
+
+
+
+// render((
+//       <BrowserRouter>
+//         <App/>
+//       </BrowserRouter>
+//     ), el)
+//    const App = () => (
+//       <div>
+//         <nav>
+//           <Link to="/dashboard">Dashboard</Link>
+//         </nav>
+//       </div>
+//     )
+//     const App = () => (
+//       <div>
+//         <nav>
+//           <Link to="/dashboard">Dashboard</Link>
+//         </nav>
+//         <div>
+//           <Route path="/dashboard" component={Dashboard}/>
+//         </div>
+//       </div>
+//     )
+// }
+
+
+import React, { Component } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
+import LoginForm from './LoginForm';
+import Account from './Account';
+
+/* App component */
 export default class App extends React.Component {
-  
-  constructor(props) {
-    super(props)
-    // the initial application state
-    this.state = {
-      user: null
+    render() {
+        return (
+            <Switch>
+                <Route exact path="/" component={LoginForm} />
+                <Route path="/Account" component={Account} />
+            </Switch>
+        )
     }
-  }
-  
-  // App "actions" (functions that modify state)
-  signIn(username, password) {
-    // This is where you would call Firebase, an API etc...
-    // calling setState will re-render the entire app (efficiently!)
-    this.setState({
-      user: {
-        username,
-        password,
-      }
-    })
-  }
-  
-  signOut() {
-    // clear out user from state
-    this.setState({user: null})
-  }
-  
-  render() {
-    // Here we pass relevant state to our child components
-    // as props. Note that functions are passed using `bind` to
-    // make sure we keep our scope to App
-    return (
-      <div class="container">
-        <h1>LOGIN</h1>
-        { 
-          (this.state.user) ? 
-            <Welcome 
-             user={this.state.user} 
-             onSignOut={this.signOut.bind(this)} 
-            />
-          :
-            <LoginForm 
-             onSignIn={this.signIn.bind(this)} 
-            />
-        }
-      </div>
-    )
-    
-  }
-  
 }
-
 
