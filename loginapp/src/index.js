@@ -1,18 +1,3 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// //import './index.css';
-// //import App from './App.js';
-// //import LoginForm from './LoginForm';
-// //import Account from './Account.js';
-// //import registerServiceWorker from './registerServiceWorker';
-// //import FormErrors from './FormErrors.js';
-// import Login from './Login.js';
-// ReactDOM.render(<Login/>, document.getElementById('app'));
-// // registerServiceWorker();
-
-
-
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 //import App from './App.js';
@@ -31,7 +16,7 @@ ReactDOM.render(
     </BrowserRouter>
     , document.getElementById('app'));
 
-   //registerServiceWorker();
+
 
 
 
