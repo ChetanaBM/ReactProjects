@@ -7,7 +7,7 @@ export default class Account extends React.Component
     {
         return(
           
-               <p>hii welcome</p>
+              <div>Hello Welcome</div>
            );
     }
 }
