@@ -4,9 +4,13 @@ import SingleInput from '../components/SingleInput';
 import TextArea from '../components/TextArea';
 import Select from '../components/Select';
 
+<<<<<<< HEAD
 
 
 class FormContainer extends Component {
+=======
+export default class FormContainer extends Component {
+>>>>>>> 5f9689891c375fcd2b50250c8c574e1e0e76aa74
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -159,4 +163,7 @@ class FormContainer extends Component {
 	}
 }
 
+<<<<<<< HEAD
 export default FormContainer;
+=======
+>>>>>>> 5f9689891c375fcd2b50250c8c574e1e0e76aa74

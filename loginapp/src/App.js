@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React from 'react';
 // import { Route, Switch } from 'react-router-dom';
 // import LoginForm from './LoginForm';
@@ -20,6 +21,8 @@
 
 
 //New Form
+=======
+>>>>>>> 5f9689891c375fcd2b50250c8c574e1e0e76aa74
 import React, { Component } from 'react';
 import '../node_modules/spectre.css/dist/spectre.min.css';
 import './styles.css';

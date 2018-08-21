@@ -1,10 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 5f9689891c375fcd2b50250c8c574e1e0e76aa74
 const CheckboxOrRadioGroup = (props) => (
 	<div>
 		<label className="form-label">{props.title}</label>
@@ -14,7 +10,6 @@ const CheckboxOrRadioGroup = (props) => (
 					<label key={option} className="form-label capitalize">
 						<input
 							className="form-checkbox"
-							name={props.setName}
 							onChange={props.controlFunc}
 							value={option}
 							checked={props.selectedOptions.indexOf(option) > -1}
@@ -30,11 +25,7 @@ CheckboxOrRadioGroup.propTypes = {
 	title: PropTypes.string.isRequired,
 	type: PropTypes.oneOf(['checkbox', 'radio']).isRequired,
 	setName: PropTypes.string.isRequired,
-<<<<<<< HEAD
-	options: PropTypes.array.isRequired,
-=======
 	options:PropTypes.array.isRequired,
->>>>>>> 5f9689891c375fcd2b50250c8c574e1e0e76aa74
 	selectedOptions: PropTypes.array,
 	controlFunc: PropTypes.func.isRequired
 };

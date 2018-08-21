@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 5f9689891c375fcd2b50250c8c574e1e0e76aa74
 const Select = (props) => (
 	<div className="form-group">
 		<select
@@ -24,7 +27,11 @@ const Select = (props) => (
 Select.propTypes = {
 	name: PropTypes.string.isRequired,
 	options: PropTypes.array.isRequired,
+<<<<<<< HEAD
 	selectedOption: PropTypes.string,
+=======
+	selectedOption:PropTypes.string,
+>>>>>>> 5f9689891c375fcd2b50250c8c574e1e0e76aa74
 	controlFunc: PropTypes.func.isRequired,
 	placeholder: PropTypes.string
 };

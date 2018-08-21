@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-<<<<<<< HEAD
 
-=======
->>>>>>> 5f9689891c375fcd2b50250c8c574e1e0e76aa74
+
+
 const SingleInput = (props) => (
 	<div className="form-group">
 		<label className="form-label">{props.title}</label>
